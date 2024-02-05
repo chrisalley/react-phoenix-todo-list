@@ -21,11 +21,7 @@ import "phoenix_html";
 import { Socket } from "phoenix";
 import { LiveSocket } from "phoenix_live_view";
 import topbar from "../vendor/topbar";
-import React from "react";
-import ReactDOM from "react-dom";
-import ReactHello from "./react_hello";
-const hello = document.getElementById("hello");
-ReactDOM.render(<ReactHello name="Phoenix" />, hello);
+import "./react/index.jsx";
 
 let csrfToken = document
   .querySelector("meta[name='csrf-token']")

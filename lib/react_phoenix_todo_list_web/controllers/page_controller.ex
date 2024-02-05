@@ -1,9 +1,9 @@
 defmodule ReactPhoenixTodoListWeb.PageController do
   use ReactPhoenixTodoListWeb, :controller
+  alias ReactPhoenixTodoList.Todo
 
   def home(conn, _params) do
-    # The home page is often custom made,
-    # so skip the default app layout.
-    render(conn, :home, layout: false)
+    tasks = Todo.list_tasks()
+    render(conn, "home.html", props: Poison.encode!(%{tasks: tasks}))
   end
 end

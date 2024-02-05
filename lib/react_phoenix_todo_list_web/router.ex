@@ -21,9 +21,11 @@ defmodule ReactPhoenixTodoListWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ReactPhoenixTodoListWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", ReactPhoenixTodoListWeb.Api do
+    pipe_through :api
+
+    resources "/tasks", TaskController
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:react_phoenix_todo_list, :dev_routes) do

@@ -1,11 +1,11 @@
-import Title from "./components/Title";
-import React from "react";
-import TaskForm from "./components/TaskForm";
-import TaskList from "./components/TaskList";
-import { useState } from "react";
+import Title from './components/Title'
+import React from 'react'
+import TaskForm from './components/TaskForm'
+import TaskList from './components/TaskList'
+import { useState } from 'react'
 
 export default function App() {
-  const [tasks, setTasks] = useState({});
+  const [tasks, setTasks] = useState({})
 
   return (
     <div className="title">
@@ -16,5 +16,5 @@ export default function App() {
       <TaskForm setTasks={setTasks} />
       <TaskList tasks={tasks} setTasks={setTasks} />
     </div>
-  );
+  )
 }

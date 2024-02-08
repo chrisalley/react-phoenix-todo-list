@@ -1,25 +1,25 @@
-import React from "react";
-import { useState } from "react";
+import React from 'react'
+import { useState } from 'react'
 
 export default function TaskForm({ setTasks }) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('')
 
   const addItem = async (description: string) => {
     const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         task: { description: description, completed: false },
       }),
-    };
+    }
     const responseCreate = await fetch(
       `http://localhost:4000/api/tasks`,
       requestOptions
-    );
-    const response = await fetch("http://localhost:4000/api/tasks");
-    const responseJson = await response.json();
-    setTasks(responseJson);
-  };
+    )
+    const response = await fetch('http://localhost:4000/api/tasks')
+    const responseJson = await response.json()
+    setTasks(responseJson)
+  }
 
   return (
     <>
@@ -36,5 +36,5 @@ export default function TaskForm({ setTasks }) {
       </div>
       <hr className="my-12" />
     </>
-  );
+  )
 }

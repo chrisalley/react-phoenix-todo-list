@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
 type Props = {
-  title: string;
-  subtitle: string;
-};
+  title: string
+  subtitle: string
+}
 
 export default function Title({ title, subtitle }: Props) {
   return (
@@ -15,5 +15,5 @@ export default function Title({ title, subtitle }: Props) {
         {subtitle}
       </h2>
     </div>
-  );
+  )
 }

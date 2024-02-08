@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
 
 type Props = {
-  id: number;
-  description: string;
-  completed: boolean;
-  deleteItem: (id: number) => void;
-  completeItem: (id: number) => void;
-};
+  id: number
+  description: string
+  completed: boolean
+  deleteItem: (id: number) => void
+  completeItem: (id: number) => void
+}
 
 export default function TaskItem({
   id,
@@ -16,16 +16,16 @@ export default function TaskItem({
   completeItem,
 }: Props) {
   const handleDelete = async (id) => {
-    deleteItem(id);
-  };
+    deleteItem(id)
+  }
   const handleComplete = async (id) => {
-    completeItem(id);
-  };
+    completeItem(id)
+  }
 
   return (
     <div className="task-item">
       <p>
-        <span className={completed ? "line-through" : ""}>{description}</span>
+        <span className={completed ? 'line-through' : ''}>{description}</span>
       </p>
       <div className="task-actions">
         <button onClick={() => handleComplete(id)} className="button">
@@ -36,5 +36,5 @@ export default function TaskItem({
         </button>
       </div>
     </div>
-  );
+  )
 }
